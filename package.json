@@ -1,0 +1,29 @@
+{
+  "name": "violacai.ca",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server build",
+    "copy:js": "copyfiles -f source/js/*.js build/js",
+    "copy:css": "copyfiles -f source/vendor/*.css build/css",
+    "copy:font": "copyfiles -f source/fonts/* build/fonts",
+    "copy:img": "copyfiles -f source/img/* build/img",
+    "pug": "pug -w --pretty source/pug/index.pug -o build/",
+    "scss:main": "sass source/scss/custom/main.scss:build/css/main.css",
+    "scss:main:red": "sass source/scss/colors/main-red.scss:build/css/main-red.css",
+    "scss:bootstrap": "sass source/scss/vendors-custom/bootstrap-custom.scss:build/css/bootstrap-custom.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "4.6.2",
+    "copyfiles": "^2.4.1",
+    "live-server": "1.2.1",
+    "node-sass": "^9.0.0",
+    "pug": "^3.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.79.1"
+  }
+}
