@@ -2,7 +2,7 @@ mixin home(variant)
   - var variantClass = (variant ? `${variant}-variant` : null)
   +nl()
   // Home
-  section#home-area.home-area.element-cover-bg(class=variantClass, style='background-image:url(img/home.jpg)')
+  section#home-area.home-area.element-cover-bg(class=variantClass, style='background-image:url(img/homebg.jpg)')
     if variant === 'particles' || variant === 'galaxy' || variant === 'snow' || variant === 'bubble'
       #particles-js
     if variant === 'video'
