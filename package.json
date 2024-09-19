@@ -9,11 +9,12 @@
     "copy:css": "copyfiles -f source/vendor/*.css build/css",
     "copy:font": "copyfiles -f source/fonts/* build/fonts",
     "copy:img": "copyfiles -f source/img/* build/img",
-    "pug": "pug -w --pretty source/pug/index.pug -o build/",
-    "scss:main": "sass -w source/scss/custom/main.scss:build/css/main.css",
-    "scss:main:red": "sass -w source/scss/colors/main-red.scss:build/css/main-red.css",
-    "scss:bootstrap": "sass source/scss/vendors-custom/bootstrap-custom.scss:build/css/bootstrap-custom.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pug:watch": "pug -w --pretty source/pug/index.pug -o build/",
+    "scss:main:watch": "sass -w source/scss/custom/main.scss:build/css/main.css",
+    "scss:main:red:watch": "sass -w source/scss/colors/main-red.scss:build/css/main-red.css",
+    "scss:bootstrap:watch": "sass -w source/scss/vendors-custom/bootstrap-custom.scss:build/css/bootstrap-custom.css",
+    "init": "yarn copy:css && yarn copy:font && yarn copy:img",
+    "all:watch": "yarn pug:watch & yarn scss:main:watch & yarn scss:main:red:watch & yarn scss:bootstrap:watch & yarn copy:js:watch & yarn start"
   },
   "author": "",
   "license": "ISC",

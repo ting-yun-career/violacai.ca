@@ -721,6 +721,16 @@
       });
     })();
 
+    $(".single-service").each(function () {
+      var element = $(this);
+      var target = element.attr("href");
+      $(element).animatedModal({
+        animatedIn: "fadeIn",
+        animatedOut: "fadeOut",
+        animationDuration: ".15s",
+      });
+    });
+
     $(".portfolio-area .portfolio-grid .portfolio-item").each(function () {
       var element = $(this);
       var target = element.attr("href");
