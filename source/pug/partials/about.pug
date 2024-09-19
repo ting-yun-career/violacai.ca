@@ -6,7 +6,7 @@ section#about-area.single-section.about-area
       .col-12
         .section-heading
           h2.section-title About me
-          p.section-description Get to know me
+          //- p.section-description Get to know me
     .row.align-items-center
       +nl()
       // Picture part
@@ -17,7 +17,15 @@ section#about-area.single-section.about-area
       .col-12.col-lg-7.about-content
         .content-block
           //- h2.content-subtitle Who am i?
-          h6.content-title I'm Viola Cai, a Financial Advisor and Mortgage Broker
+          h6.content-title I'm Viola, and I provide
+            +spc
+            b Financial Advising
+            +spc
+            | and
+            +spc
+            b Mortgage Brokering
+            +spc
+            | services.
           .content-description
             p
               | [Intro]
@@ -32,10 +40,10 @@ section#about-area.single-section.about-area
                   a(href='mailto:daniel@example.com') [email]
             .row
               .col-12.col-md-6.single-info
-                span Fields of Expertise:
-                p Personal Wealth Advisoring, Mortgate Brokering, Insurance
+                span Expertises:
+                p Personal Wealth Management, Mortgate Brokering, Insurance, Canadian Government Benefits
               .col-12.col-md-6.single-info
-                span From:
+                span Location:
                 p Vancouver, BC, Canada
           a.btn.content-download.button-main.button-scheme(href='#0', role='button') LinkedIn
-          a.btn.content-work.button-main(data-scroll='', href='#portfolio-area', role='button') Case Studies
+          //- a.btn.content-work.button-main(data-scroll='', href='#portfolio-area', role='button') Case Studies
