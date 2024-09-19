@@ -4,7 +4,7 @@
   .about-img {
     img {
       background-color: transparent;
-      border-color: rgba(#000, .18);
+      border-color: rgba(#000, 0.18);
       width: 430px;
     }
   }
@@ -28,7 +28,7 @@
       p:last-child {
         padding-bottom: 27px;
         margin-bottom: 0;
-        border-bottom: 2px solid rgba(0,0,0,.08);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.08);
       }
     }
 
@@ -37,7 +37,7 @@
       padding: 27px 0;
       margin-bottom: 4px;
 
-      &>.row:last-child {
+      & > .row:last-child {
         .single-info {
           margin-bottom: 0;
         }
@@ -46,13 +46,13 @@
       .single-info {
         margin-bottom: 10px;
 
-        &>span {
+        & > span {
           font-weight: 600;
           margin-right: 10px;
           color: #333;
         }
 
-        &>p {
+        & > p {
           display: inline-block;
           margin-bottom: 0;
         }
@@ -139,10 +139,8 @@
       }
     }
     .about-content {
-
       .content-info {
-
-        &>.row:last-child {
+        & > .row:last-child {
           .single-info {
             margin-bottom: 10px;
           }
