@@ -763,3 +763,7 @@
     }
   });
 })(jQuery);
+
+$(document).ready(function () {
+  $(".carouselTicker").carouselTicker();
+});

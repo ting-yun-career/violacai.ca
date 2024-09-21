@@ -6,7 +6,7 @@
   background-attachment: fixed;
 
   &:before {
-    background-color: rgba(#000, .83);
+    background-color: rgba(#000, 0.83);
   }
 
   .row-custom {
@@ -32,6 +32,23 @@
 
   .hire-btn {
     padding: 12px 54px;
+  }
+
+  .carouselTicker__item {
+    border: none;
+    color: #999;
+    font-weight: 700;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+    .bullish {
+      color: lightgreen;
+    }
+    .bearish {
+      color: red;
+    }
   }
 }
 
