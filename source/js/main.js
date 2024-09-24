@@ -766,4 +766,17 @@
 
 $(document).ready(function () {
   $(".carouselTicker").carouselTicker();
+  const bankPrimeRates =
+    "https://wowa.ca/api/backend/mortgage/bank-prime-rates";
+
+  axios
+    .get("/api/proxy.php?url=https://api.example.com/data")
+    .then((response) => {
+      debugger;
+      console.log(response.data);
+    })
+    .catch((error) => {
+      debugger;
+      console.error(error);
+    });
 });
