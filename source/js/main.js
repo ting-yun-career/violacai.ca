@@ -770,7 +770,7 @@ $(document).ready(function () {
     "https://wowa.ca/api/backend/mortgage/bank-prime-rates";
 
   axios
-    .get("/api/proxy.php?url=https://api.example.com/data")
+    .get(`/api/proxy.php?url=${bankPrimeRates}`)
     .then((response) => {
       debugger;
       console.log(response.data);
