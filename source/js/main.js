@@ -766,17 +766,16 @@
 
 $(document).ready(function () {
   $(".carouselTicker").carouselTicker();
-  const bankPrimeRates =
-    "https://wowa.ca/api/backend/mortgage/bank-prime-rates";
+});
 
-  axios
-    .get(`/api/proxy.php?url=${bankPrimeRates}`)
-    .then((response) => {
-      debugger;
-      console.log(response.data);
-    })
-    .catch((error) => {
-      debugger;
-      console.error(error);
-    });
+$(document).ready(async function () {
+  try {
+    const primeRates = await axios.get(
+      `/api/proxy.php?url=https://wowa.ca/api/backend/mortgage/bank-prime-rates`
+    );
+
+    debugger;
+  } catch (error) {
+    // who cares
+  }
 });
