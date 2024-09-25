@@ -768,14 +768,30 @@ $(document).ready(function () {
   $(".carouselTicker").carouselTicker();
 });
 
-$(document).ready(async function () {
+async function refreshPrimeRates() {
   try {
     const primeRates = await axios.get(
       `/api/proxy.php?url=https://wowa.ca/api/backend/mortgage/bank-prime-rates`
     );
 
-    debugger;
+    localStorage.setItem("prime-rates", {
+      time: Date.now(),
+      data: JSON.stringify(primeRates.data),
+    });
   } catch (error) {
     // who cares
+    return null;
   }
+}
+
+$(document).ready(async function () {
+  let primeRates = localStorage.getItem("prime-rates");
+
+  if (!primeRates || primeRates.time < Date.now() - 60 * 60 * 1000) {
+    await refreshPrimeRates();
+  }
+
+  primeRates = localStorage.getItem("prime-rates");
+
+  debugger;
 });
