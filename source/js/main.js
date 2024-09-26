@@ -778,7 +778,7 @@ async function refreshPrimeRates() {
       "prime-rates",
       JSON.stringify({
         time: Date.now(),
-        data: JSON.stringify(primeRates.data),
+        data: primeRates.data,
       })
     );
   } catch (error) {
@@ -800,5 +800,24 @@ $(document).ready(async function () {
 
   primeRates = JSON.parse(localStorage.getItem("prime-rates")).data;
 
-  debugger;
+  primeRates.forEach(({ source, rate }) => {
+    if (source === "TD") {
+      $(".td_rate").text(`${rate}%`);
+    }
+    if (source === "RBC") {
+      $(".rbc_rate").text(`${rate}%`);
+    }
+    if (source === "CIBC") {
+      $(".cibc_rate").text(`${rate}%`);
+    }
+    if (source === "BMO") {
+      $(".bmo_rate").text(`${rate}%`);
+    }
+    if (source === "Scotiabank") {
+      $(".scotiabank_rate").text(`${rate}%`);
+    }
+    if (source === "National Bank") {
+      $(".national_bank_rate").text(`${rate}%`);
+    }
+  });
 });
