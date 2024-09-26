@@ -774,10 +774,13 @@ async function refreshPrimeRates() {
       `/api/proxy.php?url=https://wowa.ca/api/backend/mortgage/bank-prime-rates`
     );
 
-    localStorage.setItem("prime-rates", {
-      time: Date.now(),
-      data: JSON.stringify(primeRates.data),
-    });
+    localStorage.setItem(
+      "prime-rates",
+      JSON.stringify({
+        time: Date.now(),
+        data: JSON.stringify(primeRates.data),
+      })
+    );
   } catch (error) {
     // who cares
     return null;
@@ -785,13 +788,17 @@ async function refreshPrimeRates() {
 }
 
 $(document).ready(async function () {
-  let primeRates = localStorage.getItem("prime-rates");
-
-  if (!primeRates || primeRates.time < Date.now() - 60 * 60 * 1000) {
+  if (!localStorage.getItem("prime-rates")) {
     await refreshPrimeRates();
   }
 
-  primeRates = localStorage.getItem("prime-rates");
+  let primeRates = JSON.parse(localStorage.getItem("prime-rates"));
+
+  if (primeRates.time < Date.now() - 60 * 60 * 1000) {
+    await refreshPrimeRates();
+  }
+
+  primeRates = JSON.parse(localStorage.getItem("prime-rates")).data;
 
   debugger;
 });
