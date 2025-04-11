@@ -704,7 +704,7 @@
     /*----------- Portfolio -----------*/
 
     (function () {
-      var grid = $(".portfolio-area .portfolio-grid");
+      var grid = $(".portfolio-area .portfolio-grid")[0];
       var filters = $(".portfolio-area .filter-control li");
 
       grid.isotope({

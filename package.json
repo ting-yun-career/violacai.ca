@@ -4,32 +4,28 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server build",
-    "copy:php": "copyfiles -f source/api/*.php build/api",
-    "copy:php:watch": "onchange 'source/api/*.php' -- yarn copy:php",
-    "copy:js": "copyfiles -f source/js/*.js build/js",
-    "copy:js:watch": "onchange 'source/js/main.js' -- yarn copy:js",
-    "copy:css": "copyfiles -f source/vendor/*.css build/css",
-    "copy:font": "copyfiles -f source/fonts/* build/fonts",
-    "copy:img": "copyfiles -f source/img/* build/img",
-    "pug:watch": "pug -w --pretty source/pug/index.pug -o build/",
-    "scss:main:watch": "sass -w source/scss/custom/main.scss:build/css/main.css",
-    "scss:main:red:watch": "sass -w source/scss/colors/main-red.scss:build/css/main-red.css",
-    "scss:bootstrap:watch": "sass -w source/scss/vendors-custom/bootstrap-custom.scss:build/css/bootstrap-custom.css",
-    "init": "yarn copy:css && yarn copy:font && yarn copy:img",
-    "all:watch": "yarn pug:watch & yarn scss:main:watch & yarn scss:main:red:watch & yarn scss:bootstrap:watch & yarn copy:js:watch & yarn copy:php:watch & yarn start"
+    "copy:js": "copyfiles -f js/main.js build/js",
+    "copy:js:watch": "onchange 'js/main.js' -- yarn copy:js",
+    "copy:css": "copyfiles -f css/*.css build/css",
+    "copy:css:red": "copyfiles -f css/colors/main-red.css build/css/colors",
+    "copy:css:watch": "onchange 'css/*.css' -- yarn copy:css",
+    "copy:font": "copyfiles -f fonts/* build/fonts",
+    "copy:img": "copyfiles -f img/* build/img",
+    "copy:html": "copyfiles -f index.html build/",
+    "copy:html:watch": "onchange 'index.html' -- yarn copy:html",
+    "clean": "rm -rf build",
+    "setup": "mkdir build && yarn copy:js && yarn copy:css && yarn copy:css:red && yarn copy:font && yarn copy:img && yarn copy:html",
+    "all:watch": "yarn copy:html:watch & yarn copy:js:watch & yarn:css:watch & yarn start"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "axios": "^1.7.7",
     "bootstrap": "4.6.2",
     "copyfiles": "^2.4.1",
     "live-server": "1.2.1",
-    "node-sass": "^9.0.0",
-    "onchange": "^7.1.0",
-    "pug": "^3.0.3",
-    "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.79.1"
-  }
+    "onchange": "^7.1.0"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "repository": "https://github.com/ting-yun-career/violacai.ca.git"
 }
