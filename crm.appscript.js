@@ -8,6 +8,12 @@ function onOpen() {
   const ui = SpreadsheetApp.getUi();
   ui.createMenu("Customer Tools")
     .addItem("Send Email to Selected", "sendEmailToSelected")
+    .addItem("Send Greeting Email", "sendGreetingEmail")
+    .addItem("Send Mortgage Renewal Email", "sendMortgageRenewalEmail")
+    .addItem(
+      "Send Annual Financial Review Email",
+      "sendAnnualFinancialReviewEmail"
+    )
     .addItem("Send Email to All", "sendEmailToAll")
     .addItem(
       "Create Calendar Event for Selected",
@@ -20,12 +26,22 @@ function onOpen() {
 function sendEmailToSelected() {
   const customers = getSelectedCustomers();
 
-  if (customers.length === 0) {
-    SpreadsheetApp.getUi().alert("Please select customer rows to send emails.");
+  if (customers.length != 1) {
+    SpreadsheetApp.getUi().alert("Please select only one row.");
     return;
   }
 
   const ui = SpreadsheetApp.getUi();
+  const subjectResponse = ui.prompt(
+    "Email Subject",
+    "Enter email subject:",
+    ui.ButtonSet.OK_CANCEL
+  );
+
+  if (subjectResponse.getSelectedButton() !== ui.Button.OK) {
+    return;
+  }
+
   const bodyResponse = ui.prompt(
     "Email Body",
     "Email body ({name}/{company}/{email}/{phone}):",
@@ -36,21 +52,11 @@ function sendEmailToSelected() {
     return;
   }
 
-  // const subject = subjectResponse.getResponseText();
-  const subject = `Greetings from ${me.firstName}`;
-  let bodyTemplate = bodyResponse.getResponseText();
+  const subject = subjectResponse.getResponseText();
+  const body = bodyResponse.getResponseText();
 
-  customers.forEach((customer) => {
-    const body = bodyTemplate
-      .replace(/{name}/g, customer.name)
-      .replace(/{company}/g, customer.company)
-      .replace(/{email}/g, customer.email)
-      .replace(/{phone}/g, customer.phone);
-
-    sendEmail(customer, subject, body);
-  });
-
-  ui.alert("Greeting Email sent");
+  sendEmail(customer, subject, body);
+  ui.alert("Emails sent");
 }
 
 // Get customer data from sheet
