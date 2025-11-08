@@ -34,6 +34,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/tailwind.css" />
     <!-- CSS vendors-->
     <link rel="stylesheet" href="css/bootstrap-custom.css" />
     <link rel="stylesheet" href="css/ionicons.min.css" />
@@ -63,24 +64,10 @@
     <div class="main-wrapper">
       <!-- Sidebar-->
       <header>
-        <nav class="navbar d-md-block d-lg-none fixed-top mobile-navbar">
-          <button
-            class="navbar-toggler mr-auto"
-            type="button"
-            data-toggle="collapse"
-            data-target="#mobileNavbarSupportedContent"
-            aria-controls="mobileNavbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="nav-btn">Menu</span>
-          </button>
-          <div
-            class="collapse navbar-collapse order-1"
-            id="mobileNavbarSupportedContent"
-          >
-            <ul class="navbar-nav mr-auto"></ul>
-          </div>
+        <nav
+          class="text-white bg-[#333] h-[58px] navbar d-md-block d-lg-none fixed-top"
+        >
+          header
         </nav>
         <nav class="sidebar" data-simplebar>
           <div class="sidebar-header">
@@ -152,7 +139,6 @@
               <div class="col-12">
                 <div class="section-heading">
                   <h2 class="section-title">About me</h2>
-                  <p class="section-description">Get to know me</p>
                 </div>
               </div>
             </div>
@@ -209,7 +195,6 @@
               <div class="col-12">
                 <div class="section-heading">
                   <h2 class="section-title">My Services</h2>
-                  <p class="section-description">Services</p>
                 </div>
               </div>
             </div>
@@ -228,7 +213,7 @@
                 <div class="single-service mb-0">
                   <i class="icon service-icon ion-ios-rocket"></i>
                   <h6 class="service-title">Mortgage Broking</h6>
-                  <div>[DLC-Origin Home Financial Partners Inc.]</div>
+                  <div>DLC-Origin Home Financial Partners Inc.</div>
                   <p class="service-description">
                     Mortgage tailored to your needs
                   </p>

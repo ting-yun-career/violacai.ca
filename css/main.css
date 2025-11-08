@@ -344,7 +344,7 @@ hr {
 
 /*----------- Sidebar -----------*/
 .sidebar {
-  background-color: #111;
+  background-color: #333;
 }
 
 .sidebar .sidebar-header {
@@ -394,7 +394,7 @@ hr {
 }
 
 .sidebar .sidebar-menu .list-menu .nav-link {
-  color: rgba(232, 232, 232, 0.95);
+  color: #fff;
   font-size: 16px;
   letter-spacing: 0.5px;
   line-height: 100%;
@@ -443,7 +443,7 @@ hr {
 }
 
 .mobile-navbar:before {
-  background-color: #222;
+  background-color: #333;
   content: '';
   height: 58px;
   position: absolute;
@@ -464,7 +464,7 @@ hr {
 }
 
 .mobile-navbar .navbar-toggler .nav-btn {
-  color: rgba(255, 255, 255, 0.8);
+  color: #fff;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -472,7 +472,7 @@ hr {
 }
 
 .mobile-navbar .navbar-collapse .navbar-nav {
-  background-color: #222;
+  background-color: #333;
   padding: 8px 20px;
   position: relative;
   top: 8px;
@@ -481,7 +481,7 @@ hr {
 }
 
 .mobile-navbar .navbar-collapse .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.6);
+  color: #fff;
   font-size: 14px;
   font-weight: 400;
   padding: 7px 0;
