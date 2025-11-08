@@ -3,29 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "live-server build",
-    "copy:js": "copyfiles -f js/main.js build/js",
-    "copy:js:watch": "onchange 'js/main.js' -- yarn copy:js",
-    "copy:css": "copyfiles -f css/*.css build/css",
-    "copy:css:red": "copyfiles -f css/colors/main-red.css build/css/colors",
-    "copy:css:watch": "onchange 'css/*.css' -- yarn copy:css",
-    "copy:font": "copyfiles -f fonts/* build/fonts",
-    "copy:img": "copyfiles -f img/* build/img",
-    "copy:html": "copyfiles -f index.html build/",
-    "copy:html:watch": "onchange 'index.html' -- yarn copy:html",
-    "clean": "rm -rf build",
-    "setup": "mkdir build && yarn copy:js && yarn copy:css && yarn copy:css:red && yarn copy:font && yarn copy:img && yarn copy:html",
-    "all:watch": "yarn copy:html:watch & yarn copy:js:watch & yarn:css:watch & yarn start"
+    "dev": "vite",
+    "build": "vite build"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "bootstrap": "4.6.2",
-    "copyfiles": "^2.4.1",
-    "live-server": "1.2.1",
-    "onchange": "^7.1.0"
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-  "repository": "https://github.com/ting-yun-career/violacai.ca.git"
+  "repository": "https://github.com/ting-yun-career/violacai.ca.git",
+  "devDependencies": {
+    "vite": "^7.2.2"
+  }
 }
