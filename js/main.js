@@ -1,4 +1,6 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 
 (function ($) {
   "use strict";
@@ -18,7 +20,25 @@ import { gsap } from "gsap";
       );
     });
 
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+
     gsap.to("body", { opacity: 1, duration: 3, ease: "power2.inOut" });
+
+    let hireTitleSplit = new SplitText(".hire-title", { type: "chars" });
+
+    gsap.from(hireTitleSplit.chars, {
+      scrollTrigger: {
+        trigger: ".hire-area",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play reverse play reverse",
+      },
+      y: 50,
+      opacity: 0,
+      stagger: 0.05,
+      duration: 0.8,
+      ease: "power3.out",
+    });
 
     $(".sidebar .list-menu")
       .clone()
