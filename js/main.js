@@ -45,6 +45,28 @@ import { gsap } from "gsap";
         revealDuration = 660,
         revealAnimationDelay = 1500;
 
+      initHeadline();
+
+      function initHeadline() {
+        animateHeadline($(".cd-headline"));
+      }
+
+      function animateHeadline($headlines) {
+        var duration = animationDelay;
+        $headlines.each(function () {
+          var headline = $(this);
+          if (headline.hasClass("clip")) {
+            var spanWrapper = headline.find(".cd-words-wrapper"),
+              newWidth = spanWrapper.width() + 10;
+            spanWrapper.css("width", newWidth);
+          }
+
+          setTimeout(function () {
+            hideWord(headline.find(".is-visible").eq(0));
+          }, duration);
+        });
+      }
+
       function hideWord($word) {
         var nextWord = takeNext($word);
 
