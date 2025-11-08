@@ -667,16 +667,14 @@ hr {
   }
 }
 
-/*----------- About -----------*/
 .about-area .about-img img {
   background-color: transparent;
-  /* border-color: rgba(0, 0, 0, 0.18); */
   border: none;
   width: 430px;
 }
 
 .about-area .about-content .content-subtitle {
-  font-size: 22px;
+  font-size: 2rem;
   margin-bottom: 8px;
 }
 
@@ -732,10 +730,6 @@ hr {
     -o-object-fit: cover;
     height: 440px;
     object-fit: cover;
-  }
-
-  .about-area .about-content .content-subtitle {
-    display: none;
   }
 
   .about-area .about-content .content-title {
