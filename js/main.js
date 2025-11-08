@@ -33,11 +33,11 @@ import { SplitText } from "gsap/SplitText";
         end: "bottom 20%",
         toggleActions: "play reverse play reverse",
       },
-      y: 50,
+      y: (index) => (index % 2 === 0 ? -10 : 10),
       opacity: 0,
       stagger: 0.05,
       duration: 0.8,
-      ease: "power3.out",
+      ease: "elastic.out(1, 0.5)",
     });
 
     $(".sidebar .list-menu")
