@@ -24,22 +24,6 @@ import { SplitText } from "gsap/SplitText";
 
     gsap.to("body", { opacity: 1, duration: 3, ease: "power2.inOut" });
 
-    let hireTitleSplit = new SplitText(".hire-title", { type: "chars" });
-
-    gsap.from(hireTitleSplit.chars, {
-      scrollTrigger: {
-        trigger: ".hire-area",
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play reverse play reverse",
-      },
-      y: (index) => (index % 2 === 0 ? -10 : 10),
-      opacity: 0,
-      stagger: 0.05,
-      duration: 0.8,
-      ease: "elastic.out(1, 0.5)",
-    });
-
     gsap.utils.toArray(".sidebar .nav-link").forEach((link) => {
       let target = document.querySelector(link.getAttribute("href"));
 
@@ -250,5 +234,20 @@ import { SplitText } from "gsap/SplitText";
   $(window).on("load", function () {
     $(".preloader-icon").fadeOut(400);
     $(".preloader").delay(500).fadeOut("slow");
+
+    let hireTitleSplit = new SplitText(".hire-title", { type: "words" });
+    gsap.from(hireTitleSplit.words, {
+      scrollTrigger: {
+        trigger: ".hire-area",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play reverse play reverse",
+      },
+      y: (index) => (index % 2 === 0 ? -10 : 10),
+      opacity: 0,
+      stagger: 0.05,
+      duration: 0.8,
+      ease: "elastic.out(1, 0.5)",
+    });
   });
 })(jQuery);
