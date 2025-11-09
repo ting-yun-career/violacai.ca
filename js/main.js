@@ -40,6 +40,24 @@ import { SplitText } from "gsap/SplitText";
       ease: "elastic.out(1, 0.5)",
     });
 
+    gsap.utils.toArray(".sidebar .nav-link").forEach((link) => {
+      let target = document.querySelector(link.getAttribute("href"));
+
+      ScrollTrigger.create({
+        trigger: target,
+        start: "top center",
+        end: "bottom center",
+        onToggle: (self) => {
+          if (self.isActive) {
+            document
+              .querySelectorAll(".sidebar .nav-link")
+              .forEach((l) => l.classList.remove("active"));
+            link.classList.add("active");
+          }
+        },
+      });
+    });
+
     (function () {
       var animationDelay = 2500,
         revealDuration = 660,
