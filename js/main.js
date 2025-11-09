@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 (function ($) {
   "use strict";
@@ -18,28 +19,6 @@ import { SplitText } from "gsap/SplitText";
         },
         600
       );
-    });
-
-    gsap.registerPlugin(ScrollTrigger, SplitText);
-
-    gsap.to("body", { opacity: 1, duration: 3, ease: "power2.inOut" });
-
-    gsap.utils.toArray(".sidebar .nav-link").forEach((link) => {
-      let target = document.querySelector(link.getAttribute("href"));
-
-      ScrollTrigger.create({
-        trigger: target,
-        start: "top center",
-        end: "bottom center",
-        onToggle: (self) => {
-          if (self.isActive) {
-            document
-              .querySelectorAll(".sidebar .nav-link")
-              .forEach((l) => l.classList.remove("active"));
-            link.classList.add("active");
-          }
-        },
-      });
     });
 
     (function () {
@@ -234,6 +213,26 @@ import { SplitText } from "gsap/SplitText";
   $(window).on("load", function () {
     $(".preloader-icon").fadeOut(400);
     $(".preloader").delay(500).fadeOut("slow");
+
+    gsap.to("body", { opacity: 1, duration: 3, ease: "power2.inOut" });
+
+    gsap.utils.toArray(".sidebar .nav-link").forEach((link) => {
+      let target = document.querySelector(link.getAttribute("href"));
+
+      ScrollTrigger.create({
+        trigger: target,
+        start: "top center",
+        end: "bottom center",
+        onToggle: (self) => {
+          if (self.isActive) {
+            document
+              .querySelectorAll(".sidebar .nav-link")
+              .forEach((l) => l.classList.remove("active"));
+            link.classList.add("active");
+          }
+        },
+      });
+    });
 
     let hireTitleSplit = new SplitText(".hire-title", { type: "words" });
     gsap.from(hireTitleSplit.words, {
