@@ -53,26 +53,6 @@ hr {
   margin: 0;
 }
 
-.button-main {
-  background-color: #fff;
-  border: 1px solid #c5c5c5;
-  border-radius: 30px;
-  color: #222;
-  font-size: 14px;
-  padding: 10px 38px;
-}
-
-.button-main:focus {
-  background-color: #bfbfbf;
-  border: 1px solid #c5c5c5;
-  box-shadow: none;
-}
-
-.single-section {
-  background-color: #fff;
-  padding: 85px 40px;
-}
-
 .single-section.alt-bg {
   background-color: #f7f7f7;
 }
@@ -107,7 +87,6 @@ hr {
   }
 }
 
-/* Overlay background */
 .element-cover-bg {
   background-position: 50% 0;
   background-repeat: no-repeat;
