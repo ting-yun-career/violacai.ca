@@ -584,7 +584,6 @@ hr {
 }
 
 .about-area .about-content .content-description p:last-child {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
   margin-bottom: 0;
   padding-bottom: 27px;
 }
