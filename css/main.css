@@ -71,13 +71,10 @@ hr {
   color: #fff;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .single-section .section-heading > .section-description {
     font-size: 14px;
   }
-}
-
-@media (max-width: 575.98px) {
   .single-section {
     padding: 65px 15px;
   }
@@ -618,9 +615,11 @@ hr {
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .about-area {
+    padding-top: 40px;
+  }
   .about-area .about-img img {
     -o-object-fit: cover;
-    height: 440px;
     object-fit: cover;
   }
 
@@ -643,6 +642,9 @@ hr {
 }
 
 @media (max-width: 991.98px) {
+  .about-area {
+    padding-top: 40px;
+  }
   .about-area .about-img img {
     -o-object-fit: cover;
     border-radius: 50%;
