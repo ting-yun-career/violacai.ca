@@ -764,51 +764,6 @@ hr {
   }
 }
 
-.testimonials-area .single-review {
-  background-color: #fff;
-  border: 1px solid rgba(214, 214, 214, 0.8);
-  padding: 40px 30px;
-  text-align: center;
-}
-
-.testimonials-area .single-review .review-icon {
-  display: inline-block;
-  font-size: 50px;
-  margin-bottom: 18px;
-}
-
-.testimonials-area .single-review .review-content {
-  margin-bottom: 24px;
-}
-
-.testimonials-area .single-review .client-avatar {
-  border-radius: 50%;
-  display: inline-block;
-  margin-bottom: 10px;
-  width: 56px;
-}
-
-.testimonials-area .single-review .client-name {
-  color: #3c3c3c;
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.testimonials-area .owl-carousel .owl-dots {
-  margin-top: 24px !important;
-}
-
-@media (max-width: 767.98px) {
-  .testimonials-area .single-review .review-icon {
-    font-size: 58px;
-    margin-bottom: 22px;
-  }
-
-  .testimonials-area .single-review .review-content {
-    margin-bottom: 28px;
-  }
-}
 
 .footer-area {
   background-color: #111;
