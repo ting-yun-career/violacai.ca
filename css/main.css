@@ -971,15 +971,6 @@ hr {
   background-color: #a3312f;
 }
 
-.footer-area .mini-footer .social-medias a.github {
-  background-color: #6e5494;
-}
-
-.footer-area .mini-footer .social-medias a.github:focus,
-.footer-area .mini-footer .social-medias a.github:hover {
-  background-color: #5b457a;
-}
-
 .footer-area .mini-footer .social-medias a.facebook {
   background-color: #3b5998;
 }
@@ -987,21 +978,6 @@ hr {
 .footer-area .mini-footer .social-medias a.facebook:focus,
 .footer-area .mini-footer .social-medias a.facebook:hover {
   background-color: #30487b;
-}
-
-.footer-area .mini-footer .social-medias a.dribbble {
-  background-color: #c32361;
-}
-
-.footer-area .mini-footer .social-medias a.dribbble:focus,
-.footer-area .mini-footer .social-medias a.dribbble:hover {
-  background-color: #a01d50;
-}
-
-.footer-area .mini-footer .copyright-notice {
-  color: #c7c7c7;
-  margin-bottom: 0;
-  text-align: right;
 }
 
 @media (max-width: 991.98px) {
@@ -1014,20 +990,11 @@ hr {
   .footer-area .mini-footer .social-medias {
     margin-bottom: 14px;
   }
-
-  .footer-area .mini-footer .copyright-notice {
-    margin-bottom: 0;
-    text-align: center;
-  }
 }
 
 @media (max-width: 575.98px) {
   .footer-area .contact-info [class*="col-"]:not(:last-child) .single-info {
     margin-bottom: 55px;
-  }
-
-  .footer-area .mini-footer .copyright-notice {
-    font-size: 13px;
   }
 }
 
