@@ -167,20 +167,6 @@ hr {
   animation: 1.2s grow ease-in-out infinite 0.3s;
 }
 
-@-webkit-keyframes grow {
-  0%,
-  40%,
-  100% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-
-  40% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
 @keyframes grow {
   0%,
   40%,
@@ -291,7 +277,6 @@ hr {
   width: auto;
 }
 
-
 .home-area {
   background-position: center center;
   height: 100vh;
@@ -383,24 +368,6 @@ hr {
   border-radius: 25%;
   height: 9px;
   width: 3px;
-}
-
-@-webkit-keyframes scrollDown {
-  0% {
-    opacity: 0;
-  }
-
-  10% {
-    -webkit-transform: translateY(0);
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  100% {
-    -webkit-transform: translateY(15px);
-    opacity: 0;
-    transform: translateY(15px);
-  }
 }
 
 @keyframes scrollDown {
@@ -711,7 +678,6 @@ hr {
   }
 }
 
-
 .footer-area {
   background-color: #111;
   border-left: 1px solid rgba(255, 255, 255, 0.08);
@@ -812,7 +778,6 @@ hr {
     margin-bottom: 14px;
   }
 }
-
 
 .about-area {
   position: relative;
